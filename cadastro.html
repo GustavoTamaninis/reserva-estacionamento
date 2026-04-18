@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Cadastrar</a>
+            <a href="vagas.html">Vagas Disponíveis</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="#" method="post" onsubmit="return validarForm()">
+                <h2>Reservar Vaga</h2>
+                <legend>Preencha os Dados a seguir para reservar uma vaga:</legend>
+                <div class="form-group">
+                    <label for="placa">Placa do veículo</label>
+                    <input type="text" id="placa" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome do Proprietário:</label>
+                    <input type="text" id="nome" maxlength="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="apto_num">Número do Apartamento:</label>
+                    <input type="text" id="apto" required>
+                </div>
+                <div class="form-group">
+                    <label for="apto_bloco">Bloco do apartamento</label>
+                    <input type="text" id="apto_bloco" required>
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo do Veículo:</label>
+                    <input type="text" id="modelo" required>
+                </div>
+                <div class="form-group">
+                    <label for="cor">Cor do Veículo:</label>
+                    <input type="text" id="cor" required>
+                </div>
+                <div class="form-group">
+                    <label for="vaga">Número da Vaga de Estacionamento</label>
+                    <input type="text" id="vaga" required>
+                </div>
+                <div class="button">
+                    <button type="submit" id="btnSubmit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        Site feito por Gustavo Tamanini.
+    </footer>
+    <script src="assets/js/validarForm.js"></script>
+</body>
+</html>
