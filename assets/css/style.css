@@ -85,6 +85,7 @@ form{
 
 h2{
     text-align: center;
+    color: var(--black);
 }
 
 legend{
