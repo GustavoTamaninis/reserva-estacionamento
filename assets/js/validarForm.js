@@ -22,7 +22,6 @@ function validarForm(){
     const regexAptoBloco = /^[a-z0-9]{1,10}$/i;
     const regexModelo = /^[a-z0-9\s\-]{2,40}$/i;
     const regexCor = /^[a-záàâãéèêíïóôõöúçñ\s]{3,20}$/i;
-    const regexVaga = /^(0[1-9]|10)$/;
 
     if(!validarCampo(cxPlaca, placa, regexPlaca, "Placa do Veículo")) return false;
     if(!validarCampo(cxNome, nome, regexNome, "Nome do Proprietário")) return false;
@@ -30,7 +29,7 @@ function validarForm(){
     if(!validarCampo(cxAptoBloco, aptoBloco, regexAptoBloco, "Bloco do apartamento")) return false;
     if(!validarCampo(cxModelo, modelo, regexModelo, "Modelo do Veículo")) return false;
     if(!validarCampo(cxCor, cor, regexCor, "Cor do Veículo")) return false;
-    if(!validarCampo(cxVaga, vaga, regexVaga, "Número da Vaga de Estacionamento")) return false;
+    if(!ocuparVaga(cxVaga, vaga)) return false;
 
     let c = localStorage.getItem("contador");
     if(c){
@@ -45,7 +44,6 @@ function validarForm(){
     cadastrar("aptoBloco", aptoBloco);
     cadastrar("modelo", modelo);
     cadastrar("cor", cor);
-    cadastrar("vaga", vaga);
 
     alert("Cadastro realizado com sucesso!");
     return true;
@@ -57,7 +55,7 @@ function validarCampo(cx, valor, regex, mensagem){
         cx.focus();
         return false;
     }
-    console.log("Armazenado " + valor + "em " + mensagem);
+    console.log("Armazenado " + valor + " em " + mensagem);
     return true;
 }
 

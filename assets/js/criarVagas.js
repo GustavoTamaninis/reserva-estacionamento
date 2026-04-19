@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    if(localStorage.getItem("vagas") === null){
+    if(localStorage.getItem("estacionamento") === null){
         vagas = [
             {vaga: "01", disponibilidade: "Disponível"},
             {vaga: "02", disponibilidade: "Disponível"},
@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
             {vaga: "09", disponibilidade: "Disponível"},
             {vaga: "10", disponibilidade: "Disponível"}
         ];
-        localStorage.setItem("vagas", JSON.stringify(vagas));
-        vagasRecuperadas = JSON.parse(localStorage.getItem("vagas", vagas));
+        localStorage.setItem("estacionamento", JSON.stringify(vagas));
+        // vagasRecuperadas = JSON.parse(localStorage.getItem("estacionamento", vagas));
         // alert(vagasRecuperadas[1].disponibilidade);
     }
 });
