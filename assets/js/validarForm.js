@@ -22,32 +22,46 @@ function validarForm(){
     const regexAptoBloco = /^[a-z0-9]{1,10}$/i;
     const regexModelo = /^[a-z0-9\s\-]{2,40}$/i;
     const regexCor = /^[a-záàâãéèêíïóôõöúçñ\s]{3,20}$/i;
-    const regexVaga = /^\d{1,3}$/;
+    const regexVaga = /^(0[1-9]|10)$/;
+
+    if(!validarCampo(cxPlaca, placa, regexPlaca, "Placa do Veículo")) return false;
+    if(!validarCampo(cxNome, nome, regexNome, "Nome do Proprietário")) return false;
+    if(!validarCampo(cxAptoNum, aptoNum, regexAptoNum, "Número do Apartamento")) return false;
+    if(!validarCampo(cxAptoBloco, aptoBloco, regexAptoBloco, "Bloco do apartamento")) return false;
+    if(!validarCampo(cxModelo, modelo, regexModelo, "Modelo do Veículo")) return false;
+    if(!validarCampo(cxCor, cor, regexCor, "Cor do Veículo")) return false;
+    if(!validarCampo(cxVaga, vaga, regexVaga, "Número da Vaga de Estacionamento")) return false;
 
     let c = localStorage.getItem("contador");
     if(c){
         localStorage.setItem("contador", parseInt(c) + 1);
     }else{
-        localStorage.setItem("contador", 1);
+        localStorage.setItem("contador", 0);
     }
 
-    if(!validarCampo(cxPlaca, "placa", placa, regexPlaca, "Placa do Veículo")) return false;
-    if(!validarCampo(cxNome, "nome", nome, regexNome, "Nome do Proprietário")) return false;
-    if(!validarCampo(cxAptoNum, "aptNum", aptoNum, regexAptoNum, "Número do Apartamento")) return false;
-    if(!validarCampo(cxAptoBloco, "aptoBloco", aptoBloco, regexAptoBloco, "Bloco do apartamento")) return false;
-    if(!validarCampo(cxModelo, "modelo", modelo, regexModelo, "Modelo do Veículo")) return false;
-    if(!validarCampo(cxCor, "cor", cor, regexCor, "Cor do Veículo")) return false;
-    if(!validarCampo(cxVaga, "vaga", vaga, regexVaga, "Número da Vaga de Estacionamento")) return false;
+    cadastrar("placa", placa);
+    cadastrar("nome", nome);
+    cadastrar("aptoNum", aptoNum);
+    cadastrar("aptoBloco", aptoBloco);
+    cadastrar("modelo", modelo);
+    cadastrar("cor", cor);
+    cadastrar("vaga", vaga);
+
+    alert("Cadastro realizado com sucesso!");
     return true;
 }
 
-function validarCampo(cx, chave, valor, regex, mensagem){
+function validarCampo(cx, valor, regex, mensagem){
     if(valor == "" || !regex.test(valor)){
         alert("Erro! Preencha corretamente o campo " + mensagem + "!");
         cx.focus();
         return false;
     }
     console.log("Armazenado " + valor + "em " + mensagem);
+    return true;
+}
+
+function cadastrar(chave, valor){
     localStorage.setItem(chave + localStorage.getItem("contador").toString(), valor);
     return true;
 }

@@ -65,14 +65,23 @@ main{
 }
 
 section{
-    padding: 25px;
     width: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;  
+    padding: 25px;
     background-color: var(--secondary-color);
     border-radius: 10px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), 0 6px 14px rgba(0, 0, 0, 0.16); 
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), 0 6px 14px rgba(0, 0, 0, 0.16);
+    justify-content: center;  
+}
+
+section.cadastro{
+    display: flex;
+    align-items: center;
+}
+
+section.lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 form{
@@ -83,14 +92,45 @@ form{
     color: var(--black);
 }
 
+table{
+    margin-top: 10px;
+    width: 100%;
+    border: 2px;
+}
+
+tr{
+    text-align: center;
+    color: var(--black);
+}
+
+tr:nth-child(odd){
+    background-color: var(--tertiary-color-soft);
+}
+
+tr:nth-child(even){
+    background-color: var(--tertiary-color);
+}
+
+th{
+    font-size: 1.2em;
+    background-color: var(--tertiary-color);
+}
+
+th, td{
+    border: 2px solid black;
+    font-size: 1.2em;
+}
+
 h2{
+    font-size: 1.6em;
     text-align: center;
     color: var(--black);
 }
 
 legend{
-    text-align: center;
     margin-bottom: 10px;
+    text-align: center;
+    color: var(--black);
 }
 
 div.form-group{
@@ -104,12 +144,17 @@ label{
     margin-bottom: 4px;
 }
 
-input{
+input[type=text]{
     padding: 0px 20px;
-    font-size: 1.25em;
+    font-size: 1.2em;
     border: none;
     border-radius: 5px;
     background-color: var(--tertiary-color-soft);
+}
+
+select{
+    width: 46%;
+    font-size: 1em;
 }
 
 div.button{

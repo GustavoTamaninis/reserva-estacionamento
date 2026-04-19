@@ -15,12 +15,12 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section class="cadastro">
             <form action="vagas.html" method="" onsubmit="return validarForm()">
                 <h2>Reserve sua Vaga</h2>
                 <legend>Preencha os Dados a seguir para reservar uma vaga:</legend>
                 <div class="form-group">
-                    <label for="placa">Placa do veículo</label>
+                    <label for="placa">Placa do veículo:</label>
                     <input type="text" id="placa" required>
                 </div>
                 <div class="form-group">
@@ -32,7 +32,7 @@
                     <input type="text" id="aptoNum" required>
                 </div>
                 <div class="form-group">
-                    <label for="apto_bloco">Bloco do apartamento</label>
+                    <label for="apto_bloco">Bloco do apartamento:</label>
                     <input type="text" id="aptoBloco" required>
                 </div>
                 <div class="form-group">
@@ -44,8 +44,21 @@
                     <input type="text" id="cor" required>
                 </div>
                 <div class="form-group">
-                    <label for="vaga">Número da Vaga de Estacionamento</label>
-                    <input type="text" id="vaga" required>
+                    <label for="vaga">Número da Vaga de Estacionamento:</label>
+                    <select id="vaga" required>
+                        <option value="00">Selecione uma Vaga</option>
+                        <option value="01">Vaga 01</option>
+                        <option value="02">Vaga 02</option>
+                        <option value="03">Vaga 03</option>
+                        <option value="04">Vaga 04</option>
+                        <option value="05">Vaga 05</option>
+                        <option value="06">Vaga 06</option>
+                        <option value="07">Vaga 07</option>
+                        <option value="08">Vaga 08</option>
+                        <option value="09">Vaga 09</option>
+                        <option value="10">Vaga 10</option>
+                    </select>
+                    
                 </div>
                 <div class="button">
                     <button type="submit" id="btnSubmit">Enviar</button>
@@ -56,6 +69,8 @@
     <footer>
         Site feito por Gustavo Tamanini.
     </footer>
+    <script src="assets/js/criarVagas.js"></script>
     <script src="assets/js/validarForm.js"></script>
+    <script src="assets/js/inserirVaga.js"></script>
 </body>
 </html>
